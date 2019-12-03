@@ -1,11 +1,10 @@
-var canvas = document.querySelector(`canvas`)
-;
+var canvas = document.querySelector(`canvas`);
 canvas.width= window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.height = window.innerHeight - 50;
 var c= canvas.getContext(`2d`);
 console.log(canvas)
 
-c.fillRect(1300,695,300,300) //bottom squares
+/*c.fillRect(1300,695,300,300) //bottom squares
 c.fillRect(1700,695,300,300)
 
 c.fillRect(1300,1095,300,300) // middle squares
