@@ -32,8 +32,10 @@ var rectYPos = 50;
 
 for (let y = 0; y <= height; y += squareSize){
     for (let x=0; x<= width; x+= squareSize) {
+        c.fillStyle = `rgba(0,0,0,1)`
         c.fillRect(x,y,squareSize,squareSize)
-        c.border
+        c.fillStyle = `rgba(46,192,225,1)`
+        c.fillRect(x,y,squareSize- 1,squareSize- 1)
     }
 }
 
