@@ -33,7 +33,7 @@ for (let y = 0; y <= height; y += squareSize){
         //mouseClickMethod(didItDit)
     }
 }
-
+ 
 console.log(window.innerWidth)
 console.log(window.innerHeight)
 
