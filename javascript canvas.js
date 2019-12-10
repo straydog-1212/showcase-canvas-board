@@ -97,11 +97,12 @@ elements.forEach(function(element) {
     context.fillRect(element.left, element.top, element.width, element.height);
 }); 
 */
-function player (name,hits){
-    this.Name = name;
+function ship (name,hits,originX,originY,orientation){
+    this.name= name
     this.hits = hits
     this.updateHits = function (){
        hits = hits- 1
+
 
 }
 function player(name){
@@ -111,19 +112,13 @@ function player(name){
         this.Destroyer =new ship (Destroyer,2,0,0,up)
         this.Cruiser = new  ship(Cruiser,3,0,0,up)
         this.Submarine = new ship (submarine,3,0,0,up)
+    
+    }
+   var player1 = new player ()
+    };
 
-    let p2Carrier = new Ship (Carrier,5)
-    let p2Battleship = new Ship (Battleship,4)
-    let p2Destroyer =new Ship (Destroyer,2)
-    let p2Cruiser = new Ship (Cruiser,3)
-    let p2Submarine = new Ship (submarine,3)
-}
-
-
-
-
-
-
+var player1= new player 
+    let p1Carrier = new ship (Carrier,5)
 
 
 
