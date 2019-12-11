@@ -46,6 +46,13 @@ var c= canvas.getContext(`2d`);
 console.log(canvas)
 
 c.stroke() 
+canvas.addEventListener ('click', function(event){
+    console.log(event)
+    console.log(event.region)
+    if(event.region) {
+     alert("hello world")
+    } 
+ })
 
 var squareSize = 60
 height = 600
