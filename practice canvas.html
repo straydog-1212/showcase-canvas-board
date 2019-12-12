@@ -6,17 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Practice Canvas</title>
     <style type="text/css">
-        canvas {
-            background: repeating-radial-gradient() (black,silver,white)
-        } 
-        body{
-            margin: 0;
+        .grid { margin:1em auto; border-collapse: collapse; background-color: rgb(162, 168, 255);}
+        .grid td {
+            cursor: pointer;
+            width: 70px; height: 70px;
+            border: 1px solid rgb(70, 103, 175);
         }
-
-        #canvas1{
-  border: solid 1px black;
-}
-
+        .grid td.clicked {
+            background-color: rgb(31, 165, 60);
+        }
     </style>
     <script>
   

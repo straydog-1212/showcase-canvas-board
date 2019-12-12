@@ -39,13 +39,13 @@ let hitsAndMisses2 = [
 
 
 
-var canvas = document.querySelector(`canvas`);
+/*var canvas = document.querySelector(`canvas`);
 canvas.width= window.innerWidth;
 canvas.height = window.innerHeight - 50;
 var c= canvas.getContext(`2d`);
-console.log(canvas)
+console.log(canvas)*/
 
-c.stroke() 
+/*c.stroke() 
 canvas.addEventListener ('click', function(event){
     console.log(event)
     console.log(event.region)
@@ -61,7 +61,7 @@ var rectXPos = 50;
 var boxName = 1
 c.fillRectectYPos = 50;
 
-for (let y = 0; y <= height; y += squareSize){
+/*for (let y = 0; y <= height; y += squareSize){
     for (let x = 0; x <= width; x += squareSize) {
         c.fillStyle = `rgba(0,0,0,1)`
         c.fillRect(x,y,squareSize,squareSize)
@@ -104,6 +104,39 @@ elements.forEach(function(element) {
     context.fillRect(element.left, element.top, element.width, element.height);
 }); 
 */
+var lastClicked;
+var grid = clickableGrid(5,5,function(el,row,col,i){
+    console.log("You clicked on element:",el);
+    console.log("You clicked on row:",row);
+    console.log("You clicked on col:",col);
+    console.log("You clicked on item #:",i);
+
+    el.className='clicked';
+    if (lastClicked) lastClicked.className='';
+    lastClicked = el;
+});
+
+document.body.appendChild(grid);
+     
+function clickableGrid( rows, cols, callback ){
+    var i=0;
+    var grid = document.createElement('table');
+    grid.className = 'grid';
+    for (var r=0;r<rows;++r){
+        var tr = grid.appendChild(document.createElement('tr'));
+        for (var c=0;c<cols;++c){
+            var cell = tr.appendChild(document.createElement('td'));
+            cell.innerHTML = ++i;
+            cell.addEventListener('click',(function(el,r,c,i){
+                return function(){
+                    callback(el,r,c,i);
+                }
+            })(cell,r,c,i),false);
+        }
+    }
+    return grid;
+}
+
 function ship (name,hits,originX,originY,orientation){
     this.name= name
     this.hits = hits
@@ -126,6 +159,7 @@ function player(name){
 
 var player1= new player 
     let p1Carrier = new ship (Carrier,5)
+    
 
 
 
@@ -251,16 +285,4 @@ var player1= new player
 
 
 
-<<<<<<< HEAD
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-=======
-    elements = [];
-
-    elements.push({
-        colour: '#05EFFF',
-        width: 150,
-        height: 100,
-        top: 20,
-        left: 15
-    });
->>>>>>> 6241ce659ddafbbaa7412940c06e29f41e4fe63c
