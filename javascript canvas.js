@@ -105,11 +105,11 @@ elements.forEach(function(element) {
 }); 
 */
 var lastClicked;
-var grid = clickableGrid(5,5,function(el,row,col,i){
-    console.log("You clicked on element:",el);
-    console.log("You clicked on row:",row);
-    console.log("You clicked on col:",col);
-    console.log("You clicked on item #:",i);
+var grid = clickableGrid(10,10,function(el,row,col,i){
+    console.log("clicked on element:",el);
+    console.log("clicked on row:",row);
+    console.log("clicked on col:",col);
+    console.log("clicked on item #:",i);
 
     el.className='clicked';
     if (lastClicked) lastClicked.className='';
@@ -122,11 +122,14 @@ function clickableGrid( rows, cols, callback ){
     var i=0;
     var grid = document.createElement('table');
     grid.className = 'grid';
+    
     for (var r=0;r<rows;++r){
         var tr = grid.appendChild(document.createElement('tr'));
+      
         for (var c=0;c<cols;++c){
             var cell = tr.appendChild(document.createElement('td'));
             cell.innerHTML = ++i;
+            
             cell.addEventListener('click',(function(el,r,c,i){
                 return function(){
                     callback(el,r,c,i);
