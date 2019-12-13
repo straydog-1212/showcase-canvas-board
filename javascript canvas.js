@@ -38,70 +38,44 @@ let hitsAndMisses2 = [
 ]
 
 
-var canvas = document.querySelector(`canvas`);
-canvas.width= window.innerWidth;
-canvas.height = window.innerHeight - 50;
-var c= canvas.getContext(`2d`);
-console.log(canvas)
+ 
 
 
-canvas.addEventListener ('click', function(event){
-    console.log(event)
-    console.log(event.region)
-    if(event.region) {
-     alert("hello world")
-    } 
- })
+var lastClicked;
+var grid = clickableGrid(5,5,function(el,row,col,i){
+    console.log("You clicked on element:",el);
+    console.log("You clicked on row:",row);
+    console.log("You clicked on col:",col);
+    console.log("You clicked on item #:",i);
 
-var squareSize = 60
-height = 600
-width = 600
-var rectXPos = 50;
-var boxName = 1
-c.fillRectectYPos = 50;
+    el.className='clicked';
+    if (lastClicked) lastClicked.className='';
+    lastClicked = el;
+});
 
-/*for (let y = 0; y <= height; y += squareSize){
-    for (let x = 0; x <= width; x += squareSize) {
-        c.fillStyle = `rgba(0,0,0,1)`
-        c.fillRect(x,y,squareSize,squareSize)
-        c.fillStyle = `rgba(46,192,225,1)`
-        c.fillRect(x,y,squareSize- 1,squareSize- 1)
+document.body.appendChild(grid);
+     
+function clickableGrid( rows, cols, callback ){
+    var i=0;
+    var grid = document.createElement('table');
+    grid.className = 'grid';
+    for (var r=0;r<rows;++r){
+        var tr = grid.appendChild(document.createElement('tr'));
+        for (var c=0;c<cols;++c){
+            var cell = tr.appendChild(document.createElement('td'));
+            cell.innerHTML = ++i;
+            cell.addEventListener('click',(function(el,r,c,i){
+                return function(){
+                    callback(el,r,c,i);
+                    player1.carrier.updatehits
+                    alert(hits)
+                }
+            })(cell,r,c,i),false);
         }
-    }*/
+    }
+    return grid;
+}
 
-    elements = []; 
-
-
-
-
-// Add event listener for `click` events. 
-canvas.addEventListener('click', function(event) { 
-    var x = event.pageX - elemLeft, 
-        y = event.pageY - elemTop; 
-    console.log(x, y); 
-    elements.forEach(function(element) { 
-        if (y > element.top && y < element.top + element.height && x > element.left  && x < element.left + element.width) {
-           gfgfgf 
-        } 
-    }); 
- 
-}, false); 
- 
-// Add element. 
-elements.push({ 
-    colour: '#05EFFF', 
-    width: 150, 
-    height: 100, 
-    top: 20, 
-    left: 15 
-}); 
- 
-// Render elements. 
-elements.forEach(function(element) { 
-    context.fillStyle = element.colour; 
-    context.fillRect(element.left, element.top, element.width, element.height); 
-});  
-/*
 function ship (name,hits,originX,originY,orientation){
     this.name= name
     this.hits = hits
@@ -124,17 +98,4 @@ function player(name){
 
 var player1= new player 
     let p1Carrier = new ship (Carrier,5)
-
-
-
-
-    elements = [];
-
-    elements.push({
-        colour: '#05EFFF',
-        width: 150,
-        height: 100,
-        top: 20,
-        left: 15
-    });
-*/
+    
