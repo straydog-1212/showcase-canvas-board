@@ -1,5 +1,5 @@
 let ships = [
-    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],// 0 is empty 1 is a ship from player 1 , 2 is a ship from player 2 ,and 3 is both
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
@@ -39,7 +39,7 @@ let hitsAndMisses2 = [
 
 
  
-
+ships (0,0)=;// to change value of array
 
 var lastClicked;
 var grid = clickableGrid(10,10,function(el,row,col,i){
