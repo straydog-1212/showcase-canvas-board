@@ -39,8 +39,8 @@ let hitsAndMisses2 = [
 
 
  
-ships (0,0)=;// to change value of array
 
+//registers a box was clicked
 var lastClicked;
 var grid = clickableGrid(10,10,function(el,row,col,i){
     console.log("clicked on element:",el);
@@ -55,6 +55,7 @@ var grid = clickableGrid(10,10,function(el,row,col,i){
 
 document.body.appendChild(grid);
      
+//makes the squares clickable
 function clickableGrid( rows, cols, callback ){
     var i=0;
     var grid = document.createElement('table');
@@ -78,14 +79,14 @@ function clickableGrid( rows, cols, callback ){
     }
     return grid;
 }
-
+//for ship placement
 function ship (name,hits,originX,originY,orientation){
     this.name= name
     this.hits = hits
     this.updateHits = function (){
     hits = hits- 1
 
-
+//players ships
 }
 function player(name){
         this.name = name;
