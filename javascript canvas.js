@@ -55,24 +55,25 @@ var grid = clickableGrid(10,10,function(el,row,col,i){
 
 document.body.appendChild(grid);
      
-//makes the squares clickable
+
 function clickableGrid( rows, cols, callback ){
     var i=0;
     var grid = document.createElement('table');
     grid.className = 'grid';
-    
+//creates grid
     for (var r=0;r<rows;++r){
         var tr = grid.appendChild(document.createElement('tr'));
-      
+ //creates row     
         for (var c=0;c<cols;++c){
             var cell = tr.appendChild(document.createElement('td'));
             cell.innerHTML = ++i;
-            
+//creates column
             cell.addEventListener('click',(function(el,r,c,i){
                 return function(){
                     callback(el,r,c,i);
                     player1.carrier.updatehits
                     alert(hits)
+//makes squares clickable
                 }
             })(cell,r,c,i),false);
         }
@@ -81,7 +82,7 @@ function clickableGrid( rows, cols, callback ){
 }
 //for ship placement
 function ship (name,hits,originX,originY,orientation){
-    this.name= name
+    this.name = name
     this.hits = hits
     this.updateHits = function (){
     hits = hits- 1
