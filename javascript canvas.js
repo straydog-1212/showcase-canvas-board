@@ -50,7 +50,7 @@ var grid = clickableGrid(10,10,function(el,row,col,i){
 
     el.className='clicked';
     if (lastClicked) lastClicked.className='';
-    lastClicked = el;
+    lastClicked = el; //turns squares green
 });
 
 document.body.appendChild(grid);
@@ -71,8 +71,8 @@ function clickableGrid( rows, cols, callback ){
             cell.addEventListener('click',(function(el,r,c,i){
                 return function(){
                     callback(el,r,c,i);
-                    player1.carrier.updatehits
-                    alert(hits)
+                    player1.Carrier.updatehits
+                    alert('hits')
 //makes squares clickable
                 }
             })(cell,r,c,i),false);
@@ -91,16 +91,16 @@ function ship (name,hits,originX,originY,orientation){
 }
 function player(name){
         this.name = name;
-        this.Carrier = new ship(carrier,5,0,0,up)
-        this.Battleship = new ship (Battleship,4,0,0,up)
-        this.Destroyer =new ship (Destroyer,2,0,0,up)
-        this.Cruiser = new  ship(Cruiser,3,0,0,up)
-        this.Submarine = new ship (submarine,3,0,0,up)
+        this.Carrier = new ship('Carrier',5,0,0,up)
+        this.Battleship = new ship ('Battleship',4,0,0,up)
+        this.Destroyer =new ship ('Destroyer',2,0,0,up)
+        this.Cruiser = new  ship('Cruiser',3,0,0,up)
+        this.Submarine = new ship ('submarine',3,0,0,up)
     
     }
-   var player1 = new player ()
+   var player1 = new player ('USA')
     };
 
 var player1= new player 
-    let p1Carrier = new ship (Carrier,5)
+    let p1Carrier = new ship ('Carrier',5)
     
