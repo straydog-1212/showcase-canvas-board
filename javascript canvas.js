@@ -82,12 +82,12 @@ function clickableGrid( rows, cols, callback ){
     grid.className = 'grid';
 //creates grid
     for (var r=0;r<rows;++r){
-        var tr = grid.appendChild(document.createElement('tr'));
-  
+        var tr = grid.appendChild(document.createElement('tr'))
+      
         for (var c=0;c<cols;++c){
             var cell = tr.appendChild(document.createElement('td'));
             cell.innerHTML = ++i;
-
+//creates column
             cell.addEventListener('click',(function(el,r,c,i){
                 return function(){
                     callback(el,r,c,i);
@@ -114,16 +114,18 @@ function ship (name,hits,originX,originY,orientation){
     }
 //players ships
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 679fa90e97ff62b0ebf9be2369771eca82647616
 function player(name){
         this.name = name;
-        this.Carrier = new ship('Carrier',5,0,0,'up')
-        this.Battleship = new ship ('Battleship',4,0,0,'up')
-        this.Destroyer =new ship ('Destroyer',2,0,0,'up')
-        this.Cruiser = new  ship('Cruiser',3,0,0,'up')
-        this.Submarine = new ship ('submarine',3,0,0,'up')
-          
-    };
+        this.Carrier = new ship("carrier",5,0,0,"up")
+        this.Battleship = new ship ("Battleship",4,0,0,"up")
+        this.Destroyer =new ship ("Destroyer",2,0,0,"up")
+        this.Cruiser = new  ship("Cruiser",3,0,0,"up")
+        this.Submarine = new ship ("submarine",3,0,0,"up")
     
+    }
 
-    
+
