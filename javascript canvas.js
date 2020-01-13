@@ -38,7 +38,6 @@ let hitsAndMisses2 = [
 ]
 
 
- 
 
 //registers a box was clicked
 var lastClicked;
@@ -93,12 +92,15 @@ function clickableGrid( rows, cols, callback ){
                 return function(){
                     callback(el,r,c,i);
                     player1.Carrier.updatehits
-                    
-                    
+                    if(ships[1,2,3]){
+                        alert('hit')
+                    }else{
+                        alert('miss')
+                    }                  
 //makes squares clickable
                 }
             })(cell,r,c,i),false);
-        }90
+        }
     }
     return grid;
 }
@@ -112,7 +114,7 @@ function ship (name,hits,originX,originY,orientation){
     }
 //players ships
 }
-}
+
 function player(name){
         this.name = name;
         this.Carrier = new ship('Carrier',5,0,0,'up')
