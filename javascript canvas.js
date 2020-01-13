@@ -73,7 +73,8 @@ function clickableGrid( rows, cols, callback ){
                 return function(){
                     callback(el,r,c,i);
                     player1.Carrier.updatehits
-                    alert('aaAAAAAAAAAAAH')
+                    
+                    
 //makes squares clickable
                 }
             })(cell,r,c,i),false);
