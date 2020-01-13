@@ -50,38 +50,42 @@ var grid = clickableGrid(10,10,function(el,row,col,i){
 
     el.className='clicked';
     if (lastClicked) lastClicked.className='';
-    lastClicked = el;
+    lastClicked = el; //turns squares green
 });
 
 document.body.appendChild(grid);
      
-//makes the squares clickable
+
 function clickableGrid( rows, cols, callback ){
     var i=0;
     var grid = document.createElement('table');
     grid.className = 'grid';
-    
+//creates grid
     for (var r=0;r<rows;++r){
         var tr = grid.appendChild(document.createElement('tr'))
       
         for (var c=0;c<cols;++c){
             var cell = tr.appendChild(document.createElement('td'));
             cell.innerHTML = ++i;
-            
+//creates column
+
+var player1= new player("USA") 
+
             cell.addEventListener('click',(function(el,r,c,i){
                 return function(){
                     callback(el,r,c,i);
-                    player1.carrier.updatehits
-                    alert(hits)
+                    player1.Carrier.updatehits
+                    alert('hits')
+//makes squares clickable
                 }
             })(cell,r,c,i),false);
-        }
+        }90
     }
     return grid;
 }
 //for ship placement
 function ship (name,hits,originX,originY,orientation){
-    this.name= name
+    this.name = name
     this.hits = hits
     this.updateHits = function (){
     hits = hits- 1
@@ -99,6 +103,3 @@ function player(name){
     }
 
 
-var player1= new player("USA") 
-    
-    
