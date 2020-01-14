@@ -39,7 +39,6 @@ let hitsAndMisses2 = [
 
 
 
-
 //registers a box was clicked
 var lastClicked;
 var grid = clickableGrid(10,10,function(el,row,col,i){
@@ -72,7 +71,11 @@ function clickableGrid( rows, cols, callback ){
                 return function(){
                     callback(el,r,c,i);
                     player1.Carrier.updatehits
-                    alert('hits')
+                    if(ships[1,2,3]){
+                        alert('hit')
+                    }else{
+                        alert('miss')
+                    }                  
 //makes squares clickable
                 }
             })(cell,r,c,i),false);
