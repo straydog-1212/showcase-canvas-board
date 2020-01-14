@@ -114,10 +114,6 @@ function ship (name,hits,originX,originY,orientation){
     }
 //players ships
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 679fa90e97ff62b0ebf9be2369771eca82647616
 function player(name){
         this.name = name;
         this.Carrier = new ship("carrier",5,0,0,"up")
